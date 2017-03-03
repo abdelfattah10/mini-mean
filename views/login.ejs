@@ -1,0 +1,58 @@
+﻿<html>
+
+<%- include('partials/header') %>
+
+<head>
+    <style type="text/css">
+
+    .button {
+    background-color: transparent; 
+    color: #4169E1;
+    padding: 4px 7px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 10px;
+    font-size: 25px;
+    }
+
+
+    </style>
+</head>
+
+<div class="form-container">
+    <h2>Login</h2>
+    <% if(locals.error) { %>
+        <div class="alert alert-danger"><%= error %></div>
+    <% } %>
+    <% if(locals.success) { %>
+        <div class="alert alert-success"><%= success %></div>
+    <% } %>
+    <form method="post">
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" name="username" id="username" value="<%= locals.username || '' %>" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" class="form-control" />
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Login</button>
+            <a href="/register" class="btn btn-link">Register</a>
+        </div> 
+
+        </form>
+
+        <br><br><br><br>
+        <div class="button">
+            <form action="/portfolios">
+    <input type="submit" value="View Portfolios" />
+            </form>
+        </div>
+    
+</div>
+
+</body>
+</html>
+
